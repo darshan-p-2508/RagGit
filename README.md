@@ -136,6 +136,7 @@ Final Answer
 git clone https://github.com/darshan-p-2508/RagGit.git
 cd RagGit
 ```
+Make sure the Project Structure is followed
 
 ### 2. Create Virtual Environment
 ```
@@ -151,6 +152,7 @@ pip install -r requirements.txt
 ```
 
 ### 4. Configure environment variables (.env file)
+Create .env file with below content in it, in the root directoy (refer project structure)
 ```
 GROQ_API_KEY=your_api_key_here
 ```
