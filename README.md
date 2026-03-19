@@ -29,33 +29,35 @@ RagGit is a **Retrieval-Augmented Generation (RAG)** powered application that al
 ---
 
 ## 📂 Project Structure
-<p>
+
+```text
 raggit/
 │
 ├── backend/
-│ ├── app/
-│ │ ├── api/
-│ │ │ └── routes.py
-│ │ ├── core/
-│ │ │ └── config.py
-│ │ ├── services/
-│ │ │ ├── embedding_service.py
-│ │ │ ├── llm_service.py
-│ │ │ ├── repo_service.py
-│ │ │ └── vector_service.py
-│ │ └── main.py
-│ │
-│ └── data/
-│ ├── index/
-│ └── repos/
+│   ├── app/
+│   │   ├── api/
+│   │   │   └── routes.py
+│   │   ├── core/
+│   │   │   └── config.py
+│   │   ├── services/
+│   │   │   ├── embedding_service.py
+│   │   │   ├── llm_service.py
+│   │   │   ├── repo_service.py
+│   │   │   └── vector_service.py
+│   │   └── main.py
+│   │
+│   └── data/
+│       ├── index/
+│       └── repos/
 │
 ├── frontend/
-│ └── app.py
+│   └── app.py
 │
 ├── .env
 ├── requirements.txt
 └── README.md
-</p>
+```
+
 ---
 
 ## 🔄 Execution Flow (End-to-End)
