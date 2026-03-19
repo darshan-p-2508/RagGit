@@ -11,36 +11,12 @@ from streamlit_extras.badges import badge
 # API Configuration
 # ---------------------------------------------------
 
-"""
-Defines the base URL for backend API communication.
-
-Notes:
-    - This should point to the FastAPI backend service.
-    - In production, replace with deployed backend URL.
-    - Consider using environment variables instead of hardcoding.
-
-Example:
-    http://127.0.0.1:8000/api  (local development)
-"""
-
 API = "http://127.0.0.1:8000/api"
 
 
 # ---------------------------------------------------
 # Page Configuration
 # ---------------------------------------------------
-
-"""
-Streamlit page-level configuration.
-
-Parameters:
-    - page_title: Displayed in browser tab
-    - page_icon: Emoji/favicon
-    - layout: "wide" for full-width UI
-
-Notes:
-    - Must be called before any UI rendering.
-"""
 
 st.set_page_config(
     page_title="RagGit",
@@ -52,19 +28,6 @@ st.set_page_config(
 # ---------------------------------------------------
 # Custom Styling (CSS Injection)
 # ---------------------------------------------------
-
-"""
-Custom CSS styles to enhance UI appearance.
-
-Components Styled:
-    - Repository card
-    - Answer display card
-    - Chat bubbles (user & AI)
-
-Notes:
-    - Uses Streamlit markdown with unsafe HTML enabled.
-    - In production, consider modular CSS or theming systems.
-"""
 
 st.markdown(
 """
@@ -107,16 +70,6 @@ unsafe_allow_html=True
 # Header Section
 # ---------------------------------------------------
 
-"""
-Top-level application header.
-
-Uses:
-    - colored_header (from streamlit-extras)
-
-Purpose:
-    - Branding and app description
-"""
-
 colored_header(
     label="📚 RagGit • AI GitHub Repo Assistant",
     description="Interact with any GitHub using AI",
@@ -129,22 +82,6 @@ add_vertical_space(1)
 # ---------------------------------------------------
 # Repository Connection Section
 # ---------------------------------------------------
-
-"""
-Handles user input for connecting a GitHub repository.
-
-Workflow:
-    1. User enters repository URL.
-    2. Clicks "Clone Repository".
-    3. Sends request to backend API.
-    4. Backend clones and indexes repository.
-    5. Displays success or error message.
-
-Notes:
-    - This is the entry point for the RAG pipeline.
-    - No validation is performed on URL format.
-    - Blocking call (no async handling).
-"""
 
 with stylable_container(
     "repo_container",
@@ -194,27 +131,6 @@ add_vertical_space(2)
 # Chat Section
 # ---------------------------------------------------
 
-"""
-Handles user interaction with the indexed repository.
-
-Workflow:
-    1. User enters a question.
-    2. Question is sent to backend.
-    3. Backend performs:
-        - Vector search
-        - Context retrieval
-        - LLM answer generation
-    4. Response is displayed in chat format.
-
-State Management:
-    - chat_history stored in session_state
-    - context stored for debugging/inspection
-
-Notes:
-    - Chat persists only within session.
-    - No streaming responses (blocking UX).
-"""
-
 colored_header(
     label="💬 Ask Questions",
     description="Chat with your repository",
@@ -255,18 +171,6 @@ if question:
 # Chat Display Renderer
 # ---------------------------------------------------
 
-"""
-Renders chat history in a conversational format.
-
-Components:
-    - User messages
-    - Assistant responses
-
-Notes:
-    - Uses Streamlit's native chat_message component.
-    - Messages are displayed sequentially.
-"""
-
 for role, msg in st.session_state.chat_history:
 
     if role == "user":
@@ -281,26 +185,9 @@ for role, msg in st.session_state.chat_history:
 
 add_vertical_space(1)
 
-
 # ---------------------------------------------------
 # Context Viewer (Debug / Transparency Tool)
 # ---------------------------------------------------
-
-"""
-Displays retrieved context chunks used by the LLM.
-
-Purpose:
-    - Debugging retrieval quality
-    - Improving trust and transparency
-
-UI:
-    - Expandable section
-    - Code-formatted chunks
-
-Notes:
-    - Useful during development and evaluation.
-    - Should be optional or restricted in production.
-"""
 
 if "context" in st.session_state:
 
