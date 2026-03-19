@@ -114,7 +114,7 @@ raggit/
 ---
 
 ## 🧠 RAG Pipeline Summary
-
+```
 User Question
 ↓
 Embedding (SentenceTransformer)
@@ -126,7 +126,7 @@ Context Injection
 LLM (Groq - LLaMA 3)
 ↓
 Final Answer
-
+```
 ---
 
 ## 🛠️ Setup Instructions
