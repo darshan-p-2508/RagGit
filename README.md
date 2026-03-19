@@ -29,6 +29,7 @@ RagGit is a **Retrieval-Augmented Generation (RAG)** powered application that al
 ---
 
 ## 📂 Project Structure
+```
 raggit/
 │
 |--backend/
@@ -53,6 +54,7 @@ raggit/
 |--.env
 |--requirements.txt
 └── README.md
+```
 
 ---
 
