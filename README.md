@@ -29,32 +29,32 @@ RagGit is a **Retrieval-Augmented Generation (RAG)** powered application that al
 ---
 
 ## 📂 Project Structure
-```
+
 raggit/
 │
-|--backend/
-|  |--app/
-|     |--api/
-|     |  |--routes.py
-|     |--core/
-|     |  |--config.py
-|     |--services/
-|     |  |--embedding_service.py
-|     |  |--llm_service.py
-|     |  |--repo_service.py
-|     |  |--vector_service.py
-|     |--main.py
-|  |--data/
-|     |--index/
-|     |--repos/
-|
-│--frontend/
-|  |--app.py
+├── backend/
+│ ├── app/
+│ │ ├── api/
+│ │ │ └── routes.py
+│ │ ├── core/
+│ │ │ └── config.py
+│ │ ├── services/
+│ │ │ ├── embedding_service.py
+│ │ │ ├── llm_service.py
+│ │ │ ├── repo_service.py
+│ │ │ └── vector_service.py
+│ │ └── main.py
+│ │
+│ └── data/
+│ ├── index/
+│ └── repos/
 │
-|--.env
-|--requirements.txt
+├── frontend/
+│ └── app.py
+│
+├── .env
+├── requirements.txt
 └── README.md
-```
 
 ---
 
